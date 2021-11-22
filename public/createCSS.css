@@ -1,0 +1,13 @@
+html{
+  background-color: cyan;
+  width:100%
+}
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+form{
+  width:50%
+}
+checkbox{
+  width: 0%
+}
