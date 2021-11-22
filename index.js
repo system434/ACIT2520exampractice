@@ -16,12 +16,7 @@ app.get("/", (req, res) => {
 
 app.post("/", (req,res) =>{
 
-  
-
-
-
-  console.log(req.body)
-  console.log(database)
+  // console.log(req.body)
   // console.log(req.body.fullname)
 
   let newobj = {
@@ -33,16 +28,16 @@ app.post("/", (req,res) =>{
     "favoriteArtists":req.body.artists.split(",")
   };
   fs.readFile("./database.json","UTF-8")
-    .then((content) => JSON.parse(content))
-    .then((obj)=> {
-      obj.users.push(newobj)
-      let json = JSON.stringify(obj)
-      return json
-    })
-    .then((json)=>{
-      fs.writeFile("./database.json",)
-    })
-    .catch((err) => console.log(err));
+  .then(content => JSON.parse(content))
+  .then((obj)=> {
+    obj.users.push(newobj)
+    let json = JSON.stringify(obj)
+    return json
+  })
+  .then((json)=>{
+    fs.writeFile("./database.json",json)
+  })
+  .catch((err) => console.log(err));
 
   fs.writeFile("./database.json","UTF-8")
 
