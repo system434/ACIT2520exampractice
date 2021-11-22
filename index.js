@@ -19,7 +19,14 @@ app.post("/", (req,res) =>{
     .then((content) => JSON.parse(content))
     .then((obj)=> console.log(obj.users))
     .catch((err) => console.log(err));
-    
+
+  console.log(req.body)
+  console.log
+  let newobj = {
+    "fullName":req.body.fullname,
+    "aboutMe":req.body.about
+
+  }
 
   
 
