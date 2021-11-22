@@ -21,12 +21,18 @@ app.post("/", (req,res) =>{
     .catch((err) => console.log(err));
 
   console.log(req.body)
-  console.log
+  // console.log(req.body.fullname)
+
   let newobj = {
     "fullName":req.body.fullname,
-    "aboutMe":req.body.about
+    "aboutMe":req.body.about,
+    "githubUrl":req.body.github,
+    "twitterUrl":req.body.twitter,
+    "favoriteBooks":req.body.books.split(","),
+    "favoriteArtists":req.body.artists.split(",")
+  };
 
-  }
+  fs.writeFile("./database.json","UTF-8")
 
   
 
