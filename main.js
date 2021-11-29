@@ -19,5 +19,5 @@ const IOhandler = require("./IOhandler"),
 
 
 IOhandler.unzip("myfile.zip","unzipped")
-  .then((path)=> IOhandler.readDir())
+  .then((pathOut)=> IOhandler.readDir(pathOut))
   .then(IOhandler.grayScale())

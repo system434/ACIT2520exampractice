@@ -21,11 +21,13 @@ const unzipper = require("unzipper"),
  * @return {promise}
  */
 const unzip = (pathIn, pathOut) => {
-  fs.createReadStream(pathIn)
+  return new Promise((res,rej)=>{
+    fs.createReadStream(pathIn)
   .pipe(unzipper.Extract({ path: pathOut }));
-
   console.log("Extraction Operation complete");
-  return pathOut
+  resolve(pathOut)
+  })
+  
 };
 
 // unzip("myfile.zip","unzipped")
